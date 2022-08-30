@@ -3,13 +3,13 @@ import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 
-import { AppError } from "./errors/AppError";
+import { AppError } from "@shared/errors/AppError";
+
+import swaggerFile from "../../../swagger.json";
 import { router } from "./routes";
-import swaggerFile from "./swagger.json";
 
-import "./database";
-
-import "./shared/container";
+import "@shared/infra/typeorm";
+import "@shared/container";
 
 const app = express();
 
@@ -23,6 +23,7 @@ app.use(
         error: Error,
         request: Request,
         response: Response,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         next: NextFunction
     ) => {
         if (error instanceof AppError) {
