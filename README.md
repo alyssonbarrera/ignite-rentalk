@@ -23,8 +23,6 @@ O usuário não precisa estar logado no sistema.
 
 **Requisito(s) Funcionais**  
 Deve ser possível cadastrar uma especificação para um carro.  
-Deve ser possível listar todas as especificações.  
-Deve ser possível listar todos os carros.  
 
 **Regras de Negócio**  
 Não deve ser possível cadastrar uma especificação para um carro não cadastrado.  
@@ -35,7 +33,6 @@ O usuário responsável pelo cadastro deve ser um usuário administrator.
 
 **Requisito(s) Funcionais**  
 Deve ser possível cadastrar a imagem do carro.  
-Deve ser possível listar todos os carros.  
 
 **Requisito(s) não funcionais**  
 Utilizar o multer para upload de arquivos.  
@@ -53,3 +50,4 @@ Deve ser possível cadastrar um aluguel.
 O aluguel deve ter duração mínima de 24 horas.  
 Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário.  
 Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro.  
+O usuário deve estar logado na aplicação
