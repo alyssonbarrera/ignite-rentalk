@@ -34,7 +34,6 @@ class CarsRepository implements ICarsRepository {
             specifications,
             id,
         });
-        console.log(car);
 
         await this.repository.save(car);
 
@@ -75,6 +74,17 @@ class CarsRepository implements ICarsRepository {
     async findById(id: string): Promise<Car> {
         const car = await this.repository.findOne(id);
         return car;
+    }
+
+    async updateAvailable(id: string, available: boolean): Promise<void> {
+        await this.repository
+            .createQueryBuilder()
+            .update()
+            .set({ available })
+            .where("id = :id")
+            .setParameters({ id })
+            .execute();
+        // UPDATE cars SET available = true WHERE id = 'id'
     }
 }
 
